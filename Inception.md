@@ -3,11 +3,100 @@
 
 ## Q: What is `Emmet`?
 A: `Emmet` is the essential toolkit for web-developers. It allows you to `type shortcuts` that are then expanded into full pieces of code for writing `HTML and CSS`, based on an abbreviation structure most developers already use that expands into full-fledged HTML markup and CSS rules.
+### **i) HTML Expansion**: Emmet allows us to quickly generate HTML code by using abbreviations.
+For instance, `div>ul>li.item$*3`
+```
+<div>
+    <ul>
+        <li class="item1"></li>
+        <li class="item2"></li>
+        <li class="item3"></li>
+    </ul>
+</div>
+```
+### **ii) CSS Abbreviations**: Emmet also supports expanding CSS abbreviations
+For instance, `m10`
+```
+margin: 10px;
+```
+### iii) Nested Elements: We can use > to nest elements within each other. 
+For instance, `ul>li*3` would generate an unordered list with three list items.
+```
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+```
+
+### iv) Siblings: We can use + to create sibling elements. 
+For instance, `div+p+bq` would create a div, followed by a p, and then a blockquote.
+```
+<div></div>
+<p></p>
+<blockquote></blockquote>
+```
+
+### v) Multiplication: We can use the * operator to create multiple elements. 
+For instance, `ul>li*5` would generate an unordered list with five list items.
+```
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+```
+
+### vi) Numbering: Use $ to indicate a number that should be incremented in each subsequent item. 
+For instance, `ul>li.item$*3` would create list items with classes item1, item2, and item3.
+```
+<ul>
+    <li class="item1"></li>
+    <li class="item2"></li>
+    <li class="item3"></li>
+</ul>
+```
+
+### vii) Grouping: Parentheses can be used to group elements. 
+For instance, `ul>(li.item$*2>a{Item $})*3` would generate a list with nested items and anchor tags.
+```
+<ul>
+    <li class="item1">
+        <a href="#">Item 1</a>
+    </li>
+    <li class="item2">
+        <a href="#">Item 2</a>
+    </li>
+    <li class="item3">
+        <a href="#">Item 3</a>
+    </li>
+</ul>
+```
 
 
 ## Q: Difference between a `Library and Framework`?
 A: A `library` is a collection of packages that perform specific operations whereas a `framework` contains the basic flow and architecture of an application. The major difference between them is the complexity. Libraries contain a number of methods that a developer can just call whenever they write code. React js is library and Angular is Framework.
 The `framework` provides the flow of a software application and tells the developer what it needs and calls the code provided by the developer as required. If a `library` is used, the application calls the code from the library.
+
+## Another answer
+A: A `Library` is a collection of pre-written code that provides specific functionalities or features. It is designed to be reused across different projects to save development time and effort.
+- **Control**: When using a library, the developer maintains more control over the overall structure and flow of the application. The developer decides when and how to use the library's components and functions.
+- **Usage**: Libraries are generally used to solve specific tasks or provide utilities. They are often "called" by the developer's code to perform specific actions or computations.
+- **Inversion of Control**: In a library, the developer controls the flow of the application. The library doesn't dictate the overall structure or architecture of the application.
+
+For instance, React.js is a JavaScript library developed by Facebook.
+React is primarily concerned with rendering UI components and managing their state and updates. It can be integrated into different project setups and combined with other libraries to create complete applications.
+
+A `Framework` is a structured, pre-designed architecture that provides a foundation for building an entire application. It dictates the overall structure, flow, and design patterns of the application.
+- **Control**: When using a framework, the developer gives up some control over the application's structure and flow. The framework enforces certain conventions and rules that the developer must follow.
+- **Usage**: Frameworks are used to build entire applications. They provide a foundation and a set of tools to handle various aspects of application development, such as routing, database interactions, user authentication, etc.
+- **Inversion of Control**: In a framework, control is often inverted, meaning the framework controls parts of the application's flow. Developers extend or customize the framework's components to build the application's logic.
+
+For instance, Angular is a front-end framework developed by Google.
+Angular is used for building dynamic and feature-rich web applications, particularly single-page applications (SPAs).
+
 
 
 ## Q: What is `CDN`? Why do we use it?
@@ -68,3 +157,8 @@ Execute your code only after the DOM has `initialized`, which makes DOM manipula
 Prevent top level variables from implicitly polluting the global namespace.
 Allow you to use top-level await in supported engines.
 Load and parse your code `asynchronously`, which improves load performance.
+
+
+
+
+
